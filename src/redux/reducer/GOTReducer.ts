@@ -1,3 +1,4 @@
+import { AnyAction } from 'redux';
 import { REQUEST_STARTED, REQUEST_SUCCESSFUL, REQUEST_FAILED } from '../actions';
 
 const initialState = {
@@ -11,17 +12,8 @@ const initialState = {
   errorMessage: '',
 };
 
-type ActionType = {
-  payload: {
-    url: string;
-    name: string;
-    titles: string[];
-    aliases: string[];
-  },
-  type: string,
-};
-
-function GOTReducer(state = initialState, action: ActionType) {
+function GOTReducer(state = initialState, action: AnyAction) {
+  console.log(action);
   switch (action.type) {
     case REQUEST_STARTED:
       return {

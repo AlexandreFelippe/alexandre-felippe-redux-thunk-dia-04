@@ -10,7 +10,7 @@ function requestStarted() {
 function requestSuccessful(data: string) {
   return {
     type: REQUEST_SUCCESSFUL,
-    data,
+    payload: data,
   };
 }
 
